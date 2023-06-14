@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+<meta http-equiv='pragma' content='no-cache'>
+
+<script src="./HLS/vendor-hls.js.a16386d50fbdf2097e3d.js"></script>
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="./radiosalut_files/jquery-1.11.2.min.js"></script>
+    <title>radio.brouwers</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.ico/ms-icon-310x310.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+                body {
+                  background-color: #101010;
+                  position: fixed;
+                }
+                *{
+                  margin: 0;
+                  padding: 0;
+                }
+                p{
+                  font-family: "monaco", monospace;
+                  color: #000000
+                }
+                h1{
+                  font-family: "monaco", monospace;
+                  color: #000000
+
+                }
+                @media only screen and (max-width:600px) {
+                  .background-wrap {
+                    position: fixed;
+                    bottom: 40px;
+                    top: 70px;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                  }
+                  #achtergrond {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    min-height: 100%;
+                    min-width: 100%;
+                  }
+                  .flex-parent {
+                    display: flex;
+                    float:right;
+                    z-index: 1000
+                    width:100%;
+                  }
+                  .jc-center {
+                    justify-content: center;
+                    text-align: center;
+                    z-index: 1000
+                    width: 100%;
+                  }
+                  .logo{
+                    position: fixed;
+                    z-index: 1000;
+                    bottom: 0;
+                    text-align: left;
+                  }
+                  #rpm{
+                    position: absolute;
+                    float:left;
+                    top: 12px;
+                    left: 80px ;
+                    display:none;
+                  }
+                  .footer {
+                    position: fixed;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 60px;
+                    background-color: #101010;
+                  }
+                  .metadata{
+                    position: fixed;
+                    left: 0;
+                    top:0;
+                    width: 100%;
+                    height: 70px;
+                    background-color: #ffffff;
+                    opacity: 0.5;
+                  }
+                  #info{
+                    text-align: center;
+                    padding:9px 0;
+                  }
+                  #rotate{
+                    position: absolute;
+                    bottom: 0%;
+                    left: 10px;
+                    width:60px;
+                    height:60px;
+                    animation: rotation infinite 4s linear;
+                  }
+                  @keyframes rotation{
+                    from{
+                      transform:rotate(0deg);
+                    }
+
+                    to{
+                      transform:rotate(360deg);
+                    }
+                  }
+                }
+                @media only screen and (max-width:1000px) {
+                  .background-wrap {
+                    position: fixed;
+                    bottom: 40px;
+                    top:40px;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                  }
+                  #achtergrond {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    min-height: 100%;
+                    min-width: 100%;
+                  }
+                  .flex-parent {
+                    display: flex;
+                    align-items: center;
+                    z-index: 1000
+                    width:100%;
+                  }
+                  .jc-center {
+                    justify-content: center;
+                    text-align: center;
+                    z-index: 1000
+                    width: 100%;
+                  }
+                  .logo{
+                    position: fixed;
+                    z-index: 1000;
+                    bottom: 0;
+                    text-align: left;
+                  }
+                  #rpm{
+                    position: absolute;
+                    float:left;
+                    top: 12px;
+                    left: 80px ;
+
+                  }
+                  .metadata{
+                    position: fixed;
+                    left: 0;
+                    top:0;
+                    width: 100%;
+                    height: 40px;
+                    background-color: #ffffff;
+                    opacity: 0.5;
+                  }
+                  #info{
+                    text-align: center;
+                    padding:9px 0;
+                  }
+                  .footer {
+                    position: fixed;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 60px;
+                    background-color: #101010;
+                  }
+                  #rotate{
+                    position: absolute;
+                    bottom: 0%;
+                    left: 10px;
+                    width:60px;
+                    height:60px;
+                    animation: rotation infinite 4s linear;
+                  }
+                  @keyframes rotation{
+                    from{
+                      transform:rotate(0deg);
+                    }
+
+                    to{
+                      transform:rotate(360deg);
+                    }
+                  }
+                }
+                @media only screen and (min-width:1000px) {
+                  .background-wrap {
+                    position: fixed;
+                    z-index: -1000;
+                    margin-top: 0;
+                    top: 40px;
+                    bottom: 40px;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                  }
+                  #achtergrond {
+                    position: fixed;
+                    z-index: -1000;
+                    top: 0;
+                    left: 0;
+                    min-height: 100%;
+                    min-width: 100%;
+                  }
+                  .flex-parent {
+                    display: flex;
+                    align-items: center;
+                    z-index: 1000
+                    width:100%;
+                  }
+                  .jc-center {
+                    justify-content: center;
+                    text-align: center;
+                    z-index: 1000
+                    width: 100%;
+                  }
+                  .logo{
+                    position: fixed;
+                    z-index: 1000;
+                    bottom: 0;
+                    text-align: left;
+                  }
+                  #rpm{
+                    position: absolute;
+                    float:left;
+                    top: 12px;
+                    left: 80px ;
+                  }
+                  .footer {
+                    position: fixed;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 60px;
+                    background-color: #101010;
+                  }
+                  #button{
+                    float: right;
+                    padding-right: 20px;
+                    height: 50px;
+                    width:auto;
+
+                  }
+                  .metadata{
+                    position: fixed;
+                    left: 0;
+                    top:0;
+                    width: 100%;
+                    height: 40px;
+                    background-color: #ffffff;
+                    opacity: 0.5;
+                  }
+                  #info{
+                    text-align: center;
+                    padding:9px 0;
+                  }
+
+                  #rotate{
+                    position: absolute;
+                    bottom: 0%;
+                    left: 10px;
+                    width:60px;
+                    height:60px;
+                    animation: rotation infinite 4s linear;
+                  }
+                  @keyframes rotation{
+                    from{
+                      transform:rotate(0deg);
+                    }
+
+                    to{
+                      transform:rotate(360deg);
+                    }
+                  }
+                }
+
+      </style>
+</head>
+
+<body onload="loadNowPlaying()">
+
+  <div class="background-wrap">
+        <img id="video-bg-elem" style width="100%" height="100%">
+              Bas is een Boomer
+          </img>
+  </div>
+
+  <div class="metadata">
+
+    <div id="info">
+      <td width="auto" bgcolor="#ffffe6" align="center">
+        <p><span class="en-cours" id="liedje"></span></p>
+      </td>
+    </div>
+  </div>
+
+  <div class="footer">
+
+  <div id="rpm">
+          <button onclick="myFunction()"> 33 rpm </button><br>
+          <button onclick="myFunction1()"> 45 rpm </button>
+      </div>
+
+  <script>
+            function myFunction() {
+              document.getElementById("rotate").style.animationDuration = "10s";
+            }
+            function myFunction1() {
+              document.getElementById("rotate").style.animationDuration = "2s";
+              setInt
+            }
+          </script>
+
+  <div id="logo">
+        <img src="./img/brouwers.png" id="rotate">
+      </div>
+
+  <div id="player">
+        <div class="flex-parent jc-center">
+          <a href="#" id="player-pause"><img src="./img/pauze.png" alt="pause"></a>
+          <a href="#" id="player-play"><img src="./img/speel.png" alt="play"></a>
+          <a href="#" id="player-plus"><img src="./img/plus.png" alt="plus"></a>
+          <a href="#" id="player-moins"><img src="./img/min.png" alt="moins"></a>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+    <div id="player-cached" style="display: none;">
+           <audio autoload="true" autoplay="true" controls="true" id="player-background">
+       <source src="blob:http://camellot.nl:88/7496aa00-92af-4f6d-8a5e-3ad82f615298">
+           </audio>
+      </div>
+
+      <script type = "text/javascript">
+
+          var i = 0;
+          var images = [];
+          var time = 40000;
+          var image = document.getElementById('achtergrond')
+
+     // Image List
+      images[0] = 'RADIO-BROUWERS.gif';
+      images[1] = 'BROUWERS-PALMBOOM.gif';
+      images[2] = 'MAASTRICHT.gif';
+      images[3] = 'BLACKLODGE.gif';
+      images[4] = 'TVBROUWERS.gif';
+
+
+      // Change Image
+      function changeImg(){
+        document.getElementById('video-bg-elem').src = images[i];
+
+        if(i < images.length - 1){
+          i++;
+        } else {
+          i = 0;
+        }
+
+        setTimeout("changeImg()", time);
+      }
+
+      window.onload = changeImg;
+
+          </script>
+
+      <script type = "text/javascript">
+
+          var nowPlayingTimeout;
+          var nowPlaying;
+
+          function loadNowPlaying() {
+              $.ajax({
+                  cache: false,
+                  dataType: "json",
+                  url: 'http://camellot.nl:88/api/nowplaying/radio_brouwers',
+                  success: function(np) {
+                      // Do something with the Now Playing data.
+
+                      nowPlaying = np;
+                      npline = (nowPlaying['now_playing']);
+                      song = (npline['song'])
+                      nowplayingtext = (song['text'])
+                      console.log(nowplayingtext)
+                      var nowplayingsong = nowplayingtext;
+                      document.getElementById("liedje").innerHTML = nowplayingsong;
+
+                      nowPlayingTimeout = setTimeout(loadNowPlaying, 15000);
+                  }
+              }).fail(function() {
+                  nowPlayingTimeout = setTimeout(loadNowPlaying, 30000);
+              });
+          }
+
+          $(function() {
+              loadNowPlaying();
+          });
+
+    </script>
+
+
+
+
+      <script type="text/javascript">
+
+          var up = function () {
+       var volume = $("#player-background").prop("volume") + 0.2;
+       if (volume > 1) {
+          volume = 1;
+       }
+       $("#player-background").prop("volume", volume);
+    }
+
+          var down = function () {
+       var volume = $("#player-background").prop("volume") - 0.2;
+       if (volume < 0) {
+          volume = 0;
+       }
+       $("#player-background").prop("volume", volume);
+    }
+
+          var mute = function () {
+       var volume = $("#player-background").prop("volume") - 1.0;
+       if (volume < 0) {
+          volume = 0;
+       }
+       $("#player-background").prop("volume", volume);
+    }
+
+          var speel = function () {
+       var volume = $("#player-background").prop("volume") + 1.0;
+       if (volume > 1) {
+          volume = 1;
+       }
+       $("#player-background").prop("volume", volume);
+    }
+
+            $("#player-pause").click(function () { mute(); });
+            $("#player-play").click(function () { $("#player-background").trigger('play'); });
+            $("#player-play").click(function () { speel(); });
+            $("#player-plus").click(function () { up(); });
+            $("#player-moins").click(function () { down(); });
+
+      </script>
+
+</body>
+</html>
